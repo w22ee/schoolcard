@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue"
+    android:orientation="horizontal"
+    android:padding="@dimen/layout_padding">
+
+    <ImageView
+        android:id="@+id/backbutton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:paddingRight="10dp"
+        android:src="@mipmap/direction_left"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/backbutton"
+        android:text="卡信息查询"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_text"/>
+
+    <TextView
+        android:id="@+id/login_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text="退出卡登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_text"
+        android:visibility="invisible"/>
+</RelativeLayout>

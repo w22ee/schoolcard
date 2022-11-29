@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pages.cardbusiness.TransactionActivity">
+
+    <include layout="@layout/title_layout"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/card_magin_top"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.lixi.shoolcard.views.GridItemView
+                android:id="@+id/cardinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="卡信息查询"
+                app:icon="@mipmap/cardinfo"
+                />
+            <com.lixi.shoolcard.views.GridItemView
+                android:id="@+id/rechargebill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="电控缴费记录查询"
+                app:icon="@mipmap/rechargebill"
+                />
+            <com.lixi.shoolcard.views.GridItemView
+                android:id="@+id/cardrechargerecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:text="校园卡充值记录查询"
+                app:icon="@mipmap/cardrecharge"
+                />
+
+            <com.lixi.shoolcard.views.GridItemView
+                android:id="@+id/paymentrecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:icon="@mipmap/payment"
+                app:text="消费记录查询" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

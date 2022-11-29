@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/table_bg"
+    android:paddingTop="@dimen/layout_padding"
+    android:paddingBottom="@dimen/layout_padding">
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_name"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/grade_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/str_grade"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/class_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_class"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_amount"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/remain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_remain"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/trans_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/str_trans_time"
+        android:textSize="@dimen/input_text"/>
+
+    <!--TextView
+        android:id="@+id/consume_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_consume_type" /-->
+    <TextView
+        android:id="@+id/wallet_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/str_wallet_type"
+        android:textSize="@dimen/input_text"/>
+
+    <TextView
+        android:id="@+id/pay_terminal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="@string/str_mch_name"
+        android:textSize="@dimen/input_text"/>
+</LinearLayout>

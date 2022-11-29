@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">shoolcard</string>
+    <string name="title_activity_password">PasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="str_name">姓名</string>
+    <string name="str_grade">年级</string>
+    <string name="str_class">班级</string>
+    <string name="str_amount">消费金额</string>
+    <string name="str_trans_time">交易时间</string>
+    <string name="str_remain">余额</string>
+    <string name="str_consume_type">消费类型</string>
+    <string name="str_wallet_type">钱包类型</string>
+    <string name="str_mch_name">消费终端</string>
+    <string name="str_recharge_amount">充值金额</string>
+    <string name="str_status">是否到账</string>
+    <string name="str_build_name">楼栋</string>
+    <string name="str_room_name">房间</string>
+    <string name="str_acc_name">支付方式</string>
+</resources>

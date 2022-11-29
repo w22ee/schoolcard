@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".pages.electric.RechargeActivity"
+    android:background="@color/gray_background">
+
+    <include  android:id="@+id/title" layout="@layout/title_layout" />
+
+    <LinearLayout
+        android:layout_below="@+id/title"
+        android:layout_above="@+id/rechargeRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/page_magin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_padding"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="@dimen/recharge_form_width"
+                android:layout_height="wrap_content"
+                android:text="楼栋"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/main_text"/>
+
+            <TextView
+                android:id="@+id/select_bu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请选择楼栋"
+                android:textColorHint="@color/placeholder"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/regular_text"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/line"
+            android:layout_height="0.5px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_padding"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="@dimen/recharge_form_width"
+                android:layout_height="wrap_content"
+                android:text="楼层"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/main_text"/>
+
+            <TextView
+                android:id="@+id/select_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请选择楼层"
+                android:textColorHint="@color/placeholder"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/regular_text"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/line"
+            android:layout_height="0.5px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/layout_padding"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="@dimen/recharge_form_width"
+                android:layout_height="wrap_content"
+                android:text="房间"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/main_text"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/input_room"
+                android:focusable="true"
+                android:completionThreshold="1"
+                android:focusableInTouchMode="true"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入房间号进行选择"
+                android:textColorHint="@color/placeholder"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/regular_text"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/line"
+            android:layout_height="0.5px"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_padding"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="@dimen/recharge_form_width"
+                android:layout_height="wrap_content"
+                android:text="房间电费余额"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/main_text"/>
+
+            <TextView
+                android:id="@+id/left_elc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="-"
+                android:textColorHint="@color/placeholder"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/regular_text"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/line"
+            android:layout_height="0.5px"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_padding"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="@dimen/recharge_form_width"
+                android:layout_height="wrap_content"
+                android:text="缴费金额"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/main_text"/>
+
+            <EditText
+                android:id="@+id/input_monney"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入金额"
+                android:textColorHint="@color/placeholder"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/regular_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/line"
+            android:layout_height="0.5px"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/putCardll"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="@dimen/recharge_form_width"
+                    android:layout_height="wrap_content"
+                    android:text="卡余额"
+                    android:textSize="@dimen/input_text"
+                    android:textColor="@color/main_text"/>
+
+                <TextView
+                    android:id="@+id/card_remain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请刷卡"
+                    android:textColorHint="@color/placeholder"
+                    android:textSize="@dimen/input_text"
+                    android:textColor="@color/regular_text"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/line"
+                android:layout_height="0.5px"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_padding"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="@dimen/recharge_form_width"
+                    android:layout_height="wrap_content"
+                    android:text="在线金额"
+                    android:textSize="@dimen/input_text"
+                    android:textColor="@color/main_text"
+                    />
+                <TextView
+                    android:id="@+id/elec_remain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/input_text"
+                    android:textColor="@color/regular_text"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/layout_padding">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可以先刷卡查询当前在线金额"
+                android:textSize="@dimen/input_text"
+                android:textColor="@color/secondary_text"
+                />
+        </LinearLayout>
+        <!--Button
+            android:id="@+id/test_put"
+            android:text="模拟刷卡"
+            android:layout_marginTop="@dimen/magin_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/-->
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:id="@+id/rechargeRl"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/page_magin">
+        <TextView
+            android:id="@+id/recharge"
+            android:text="去缴费"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text"
+            android:padding="@dimen/layout_padding"
+            android:layout_centerInParent="true"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+    </RelativeLayout>
+</RelativeLayout>
