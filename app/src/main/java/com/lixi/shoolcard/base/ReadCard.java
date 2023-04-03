@@ -2,12 +2,16 @@ package com.lixi.shoolcard.base;
 
 import android.util.Log;
 
+import com.lixi.shoolcard.utils.GsonUtil;
+import com.tencent.mmkv.MMKV;
+
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Date;
 
 import android_serialport_api.SerialPort;
 
@@ -71,6 +75,18 @@ public class ReadCard {
     protected void onDataReceived(final byte[] buffer, final int size) {
         String info = bytesToHex(buffer, 0, size);
         Log.v("debug", "线程"+mReadThread.toString()+"接收到串口信息======>" + info);
+        MMKV kv = MMKV.defaultMMKV();
+        if(kv.getBoolean("open_log",false)){
+            String aalog =  kv.getString("aalog","");
+            StringBuilder stringBuilder = new StringBuilder(aalog);
+            stringBuilder.append(new Date());
+            stringBuilder.append("\r\n");
+            stringBuilder.append("\r\n");
+            stringBuilder.append("接收到串口信息======>" + info);
+            stringBuilder.append("\r\n");
+            stringBuilder.append("\r\n");
+            kv.putString("aalog",stringBuilder.toString());
+        }
         EventBus.getDefault().post(new ReadEvent(info));
     }
 

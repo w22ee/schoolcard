@@ -6,6 +6,8 @@ import com.lixi.shoolcard.network.vo.ApiRequest;
 import com.lixi.shoolcard.utils.GsonUtil;
 import com.tencent.mmkv.MMKV;
 
+import java.util.Date;
+
 import okhttp3.RequestBody;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -44,6 +46,17 @@ public class NetWorkUitl {
         Gson gson= GsonUtil.getGson();
         String route= gson.toJson(request);//通过Gson将Bean转化为Json字符串形式
         RequestBody body=RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
+        if(kv.getBoolean("open_log",false)){
+            String aalog =  kv.getString("aalog","");
+            StringBuilder stringBuilder = new StringBuilder(aalog);
+            stringBuilder.append(new Date());
+            stringBuilder.append("\r\n");
+            stringBuilder.append("\r\n");
+            stringBuilder.append("请求参数：：" + GsonUtil.getGson().toJson(request));
+            stringBuilder.append("\r\n");
+            stringBuilder.append("\r\n");
+            kv.putString("aalog",stringBuilder.toString());
+        }
         return body;
     }
 }

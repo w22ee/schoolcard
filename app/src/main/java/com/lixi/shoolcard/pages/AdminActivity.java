@@ -1,9 +1,11 @@
 package com.lixi.shoolcard.pages;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
 import com.lixi.shoolcard.base.BaseActivity;
@@ -133,6 +135,35 @@ public class AdminActivity extends BaseActivity {
                     serviceUrl = "https://"+serviceUrl;
                 }
                 binding.serviceUrl.setText(serviceUrl);
+            }
+        });
+        binding.showLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!kv.getBoolean("open_log",false)){
+                    ToastUtil.showToast("日志未打开");
+                    return;
+                }
+                System.out.println(kv.getString("aalog",""));
+                AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(AdminActivity.this);
+                alertDialogBuilder.setMessage(kv.getString("aalog",""));
+
+                AlertDialog  alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
+        binding.writeLog.setChecked(kv.getBoolean("open_log",false));
+        binding.writeLog.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                kv.putBoolean("open_log",b);
+            }
+        });
+        binding.delLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                kv.removeValueForKey("aalog");
+                ToastUtil.showToast("已删除");
             }
         });
     }
